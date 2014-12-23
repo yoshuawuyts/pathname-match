@@ -1,0 +1,32 @@
+{
+  "name": "pathname-match",
+  "version": "1.0.0",
+  "description": "Strip a url to only match the `pathname`.",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test tape test.js | tap-bail |tap-spec",
+    "test-cov": "NODE_ENV=test istanbul cover test.js",
+    "lint": "eslint ."
+  },
+  "repository": "yoshuawuyts/pathname-match",
+  "keywords": [
+    "path",
+    "match",
+    "strip",
+    "wayfarer"
+  ],
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^0.10.2",
+    "istanbul": "^0.3.5",
+    "tap-bail": "0.0.0",
+    "tap-spec": "^2.1.2",
+    "tape": "^3.0.3"
+  },
+  "files": [
+    "LICENSE",
+    "index.js",
+    "README.md"
+  ]
+}
