@@ -1,13 +1,13 @@
+const assert = require('assert')
+const url = require('url')
 
-var assert = require('assert')
-
-module.exports = pathnameMatch
+module.exports = match
 
 // Match only a pathname.
-// @param {String} path
-// @return {String} path
-function pathnameMatch(path) {
+// (str, str) -> str
+function match (path) {
   assert.equal(typeof path, 'string')
-  var nw = path.split('#')[0]
-  return nw.replace(/\/$/, '')
+  const nw = url.parse(path).pathname
+  const trimmed = nw.replace(/\/$/, '')
+  return trimmed
 }
