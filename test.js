@@ -15,3 +15,8 @@ test('it should remove trailing slashes', function (t) {
   t.plan(1)
   t.equal(match('/foo/bar/'), '/foo/bar')
 })
+
+test('it should remove trailing slashes', function (t) {
+  t.plan(1)
+  t.equal(match('https://foobar.com/foo/bar/'), '/foo/bar')
+})
