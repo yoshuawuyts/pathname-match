@@ -16,7 +16,7 @@ $ npm install pathname-match
 const pathMatch = require('pathname-match')
 const wayfarer  = require('wayfarer')
 
-const router = wayfarer({ default: '/' })
+const router = wayfarer('/')
 
 router.on('/', => console.log('home'))
 router.on('/derp', => console.log('derp'))
