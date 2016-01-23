@@ -1,6 +1,6 @@
 {
   "name": "pathname-match",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Strip a url to only match the `pathname`.",
   "main": "index.js",
   "scripts": {
