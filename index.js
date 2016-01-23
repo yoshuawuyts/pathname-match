@@ -1,13 +1,18 @@
 const assert = require('assert')
-const url = require('url')
 
 module.exports = match
 
-// Match only a pathname.
-// (str, str) -> str
-function match (path) {
-  assert.equal(typeof path, 'string')
-  const nw = url.parse(path).pathname
-  const trimmed = nw.replace(/\/$/, '')
-  return trimmed
+// get url path section from a url
+// strip querystrings / hashes
+// strip protocol
+// strip hostname and port (both ip and route)
+// str -> str
+function match (route) {
+  assert.equal(typeof route, 'string')
+
+  return route.trim()
+    .replace(/[\?|#].*$/, '')
+    .replace(/^(?:https?\:)\/\//, '')
+    .replace(/^(?:[\w.])+(?:[\:0-9]{4,5})?/, '')
+    .replace(/\/$/, '')
 }

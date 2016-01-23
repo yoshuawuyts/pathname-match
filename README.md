@@ -4,7 +4,7 @@
 [![Test coverage][coveralls-image]][coveralls-url]
 [![Downloads][downloads-image]][downloads-url]
 
-Strip a url to only match the `pathname`.
+Strip a url to only match the `pathname`. Weighs only 200 bytes gzipped.
 
 ## Installation
 ```bash
