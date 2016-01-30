@@ -13,6 +13,6 @@ function match (route) {
   return route.trim()
     .replace(/[\?|#].*$/, '')
     .replace(/^(?:https?\:)\/\//, '')
-    .replace(/^(?:[\w.])+(?:[\:0-9]{4,5})?/, '')
+    .replace(/^(?:[\w+(?:-\w+)+.])+(?:[\:0-9]{4,5})?/, '')
     .replace(/\/$/, '')
 }
