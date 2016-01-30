@@ -33,8 +33,10 @@ test('it should remove protocols', function (t) {
 })
 
 test('it should remove hosts', function (t) {
-  t.plan(1)
+  t.plan(3)
   t.equal(match('bar.com/foo/bar/'), '/foo/bar')
+  t.equal(match('bar-foo.com/foo/bar/'), '/foo/bar')
+  t.equal(match('bar-foo--bar.com/foo/bar/'), '/foo/bar')
 })
 
 test('it should remove ips', function (t) {
