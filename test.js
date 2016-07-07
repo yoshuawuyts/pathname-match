@@ -50,8 +50,14 @@ test('it should remove ports', function (t) {
   t.equal(match('127.0.0.1:422/foo/bar/'), '/foo/bar')
 })
 
+test('it should remove basic auth credentials', function (t) {
+  t.plan(2)
+  t.equal(match('user:pass@bar.com/foo/bar'), '/foo/bar')
+  t.equal(match('user:pass@127.0.0.1:1337/foo/bar'), '/foo/bar')
+})
+
 test('it should remove all the things, together', function (t) {
   t.plan(2)
-  t.equal(match('http://127.0.0.1:1337/foo/bar/?bin=bar'), '/foo/bar')
-  t.equal(match('https://foobar.com:1337/foo/#bar?bin=baz'), '/foo')
+  t.equal(match('http://user:pass@127.0.0.1:1337/foo/bar/?bin=bar'), '/foo/bar')
+  t.equal(match('https://user:pass@foobar.com:1337/foo/#bar?bin=baz'), '/foo')
 })
