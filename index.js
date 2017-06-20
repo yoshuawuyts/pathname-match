@@ -1,5 +1,3 @@
-const assert = require('assert')
-
 module.exports = match
 
 // get url path section from a url
@@ -8,7 +6,9 @@ module.exports = match
 // strip hostname and port (both ip and route)
 // str -> str
 function match (route) {
-  assert.equal(typeof route, 'string')
+  if (typeof route === 'string') {
+    throw new TypeError('The route parameter should be a string')
+  }
 
   return route.trim()
     .replace(/[\?|#].*$/, '')
