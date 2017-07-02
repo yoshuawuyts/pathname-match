@@ -6,7 +6,7 @@ module.exports = match
 // strip hostname and port (both ip and route)
 // str -> str
 function match (route) {
-  if (typeof route === 'string') {
+  if (typeof route !== 'string') {
     throw new TypeError('The route parameter should be a string')
   }
 
