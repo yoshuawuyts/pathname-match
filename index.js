@@ -1,4 +1,4 @@
-const assert = require('assert')
+var assert = require('assert')
 
 module.exports = match
 
